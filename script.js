@@ -1,3 +1,4 @@
+// COMPUTE a choice for the computer
 function getComputerChoice() {
     // CALCULATE random number from 0 - 2
     let choice = Math.floor(Math.random() * 3);
@@ -15,7 +16,11 @@ function getComputerChoice() {
     }
 }
 
-// ASSIGN 
-const computerSelection = getComputerChoice();
+// OBTAIN choice from user
+function getPlayerChoice() {
+    let choice = prompt("Rock, paper, scissors?");
+    console.log(choice.toLowerCase());
+    return choice.toLowerCase();
+}
 
-console.log(computerSelection)
+getPlayerChoice();
