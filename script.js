@@ -45,11 +45,15 @@ function playRound(playerSelection, computerSelection,) {
 }
 
 function winner(playerSelection, computerSelection) {
-    return `You win! ${playerSelection.charAt(0).toUpperCase().concat(playerSelection.substr(1))} beats ${computerSelection}.`;
+    let capitalizedChoice = playerSelection.charAt(0).toUpperCase().concat(playerSelection.substr(1));
+    
+    return `You win! ${capitalizedChoice} beats ${computerSelection}.`;
 }
 
 function loser(playerSelection, computerSelection) {
-    return `You lose! ${computerSelection.charAt(0).toUpperCase().concat(computerSelection.substr(1))} beats ${playerSelection}.`;
+    let capitalizedChoice = computerSelection.charAt(0).toUpperCase().concat(computerSelection.substr(1));
+    
+    return `You lose! ${capitalizedChoice} beats ${playerSelection}.`;
 }
 
 function draw() {
