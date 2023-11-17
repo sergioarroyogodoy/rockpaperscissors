@@ -13,6 +13,34 @@ function playRound(playerSelection, computerSelection) {
             if (computerSelection == "scissors") {
                 return winner();
             }
+            else if (computerSelection == "paper") {
+                return loser();
+            }
+            else {
+                return draw();
+            }
+        case "paper":
+            if (computerSelection == "rock") {
+                return winner();
+            }
+            else if (computerSelection == "scissors") {
+                return loser();
+            }
+            else {
+                return draw();
+            }
+        case "scissors":
+            if (computerSelection == "paper") {
+                return winner();
+            }
+            else if (computerSelection == "rock") {
+                return loser();
+            }
+            else {
+                return draw();
+            }
+        default:
+            return "You did not enter a valid option"
     }
 }
 
