@@ -5,39 +5,37 @@
     // IF the matchup is "rock" vs "scissors", THEN "rock" wins
     // If the matchup is "paper" vs "scissors", THEN "scissors" wins
 
-
-
 function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case "rock":
             if (computerSelection == "scissors") {
-                return winner();
+                return winner(playerSelection, computerSelection);
             }
             else if (computerSelection == "paper") {
-                return loser();
+                return loser(playerSelection, computerSelection);
             }
             else {
-                return draw();
+                return draw(playerSelection, computerSelection);
             }
         case "paper":
             if (computerSelection == "rock") {
-                return winner();
+                return winner(playerSelection, computerSelection);
             }
             else if (computerSelection == "scissors") {
-                return loser();
+                return loser(playerSelection, computerSelection);
             }
             else {
-                return draw();
+                return draw(playerSelection, computerSelection);
             }
         case "scissors":
             if (computerSelection == "paper") {
-                return winner();
+                return winner(playerSelection, computerSelection);
             }
             else if (computerSelection == "rock") {
-                return loser();
+                return loser(playerSelection, computerSelection);
             }
             else {
-                return draw();
+                return draw(playerSelection, computerSelection);
             }
         default:
             return "You did not enter a valid option"
@@ -55,3 +53,6 @@ function loser(playerSelection, computerSelection) {
 function draw() {
     return "It's a draw."
 }
+
+
+console.log(playRound("rock", "scissors"));
