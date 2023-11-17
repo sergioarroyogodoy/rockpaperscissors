@@ -5,15 +5,19 @@
     // IF the matchup is "rock" vs "scissors", THEN "rock" wins
     // If the matchup is "paper" vs "scissors", THEN "scissors" wins
 
+const playerSelection = "rock";
+const computerSelection = "scissors";
+
 function playRound(playerSelection, computerSelection) {
-    if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+    if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
+        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
     }
-    else if ( playerSelection == computerSelection) {
+    else if (playerSelection === computerSelection) {
         return "It's a draw";
     }
     else {
         return `You lose! ${computerSelection} beats ${playerSelection}`
     }
-    
 }
+
+console.log(playRound());
