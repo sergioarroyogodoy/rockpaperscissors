@@ -53,5 +53,3 @@ function loser(playerSelection, computerSelection) {
 function draw() {
     return "It's a draw."
 }
-
-console.log(playRound("paper", "scissors"))
