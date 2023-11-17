@@ -1,15 +1,17 @@
 // COMPUTE a random computer choice of either "rock", "paper", or "scissors"
 // OBTAIN "rock", "paper", or "scissors" input from user
 // DETERMINE the winner by analyzing who wins
-    // If the matchup is "rock" vs "paper", THEN "paper" wins
-    // IF the matchup is "rock" vs "scissors", THEN "rock" wins
-    // If the matchup is "paper" vs "scissors", THEN "scissors" wins
+    // IF the user selects "rock", they will defeat "scissors", lose to "paper", and draw against "rock"
+    // ELSE IF the user selects "paper", they will defeat "rock", lose to "scissors", and draw against "paper"
+    // ELSE IF the user selects "scissors", they will defeat "paper", lose to "rock", and draw against "scissors"
+    // ELSE the user inputs a string other than one of the three, they will receive an error message
+// 
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection,) {
     switch (playerSelection) {
         case "rock":
             if (computerSelection == "scissors") {
-                return winner(playerSelection, computerSelection);
+                return winner(playerSelection, computerSelection)
             }
             else if (computerSelection == "paper") {
                 return loser(playerSelection, computerSelection);
@@ -52,4 +54,10 @@ function loser(playerSelection, computerSelection) {
 
 function draw() {
     return "It's a draw."
+}
+
+function game() {
+    for (let i = 0; i < 6; i++) {
+        console.log(playRound("rock", "scissors"));
+    }
 }
