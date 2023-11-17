@@ -57,7 +57,8 @@ function draw() {
 }
 
 function game() {
-    for (let i = 0; i < 6; i++) {
-        console.log(playRound("rock", "scissors"));
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock, paper, scissors?")
+        console.log(playRound(playerSelection.toLowerCase(), "scissors"));
     }
 }
