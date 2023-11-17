@@ -19,8 +19,28 @@ function getComputerChoice() {
 // OBTAIN choice from user
 function getPlayerChoice() {
     let choice = prompt("Rock, paper, scissors?");
-    console.log(choice.toLowerCase());
     return choice.toLowerCase();
 }
 
-getPlayerChoice();
+function playRound(playerSelection, computerSelection) {
+    function winner (playerSelection, computerSelection) {
+        return `You win! ${playerSelection.charAt(0).toUpperCase().concat(playerSelection.slice(1))} beats ${computerSelection}.`
+    }
+    function loser (playerSelection, computerSelection) {
+        return `You lose! ${computerSelection.charAt(0).toUpperCase().concat(computerSelection.slice(1))} beats ${playerSelection}.`
+    }
+    
+    let outcome;
+    if (playerSelection == computerSelection) {
+        outcome = draw;
+        return draw;
+    }
+    switch (playerSelection) {
+        case "rock":
+            if (computerSelection == "scissors") {
+                winner();
+                outcome = win;
+                return outcome;
+            }
+    }
+  }
