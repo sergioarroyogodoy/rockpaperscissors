@@ -19,32 +19,56 @@ function getUserChoice() {
 
 // DETERMINE if the outcome of the matchup is won, lost or drawn
 // OUTPUT a message letting the user know the outcome
-function playRound(playerSelection, computerSelection) {    
+function playRound(playerSelection, computerSelection) {
+    let outcome;
+    
     let draw = () => "It's a draw!";
     let win = (playerSelection, computerSelection) => `You win, ${playerSelection} beats ${computerSelection}.`;
     let lose = (playerSelection, computerSelection) => `You lose, ${computerSelection} beats ${playerSelection}.`
 
     if (playerSelection == computerSelection) {
-        return draw();
+        console.log(draw());
+        outcome = "draw"
+        return outcome;
     }
     switch (playerSelection) {
         case "rock":
             if (computerSelection == "scissors") {
-                return win(playerSelection, computerSelection);
+                console.log(win(playerSelection, computerSelection));
+                outcome = "win";
+                return outcome;
             }
-            else {return lose(playerSelection, computerSelection);}
+            else {
+                console.log(lose(playerSelection, computerSelection));
+                outcome = "loss";
+                return outcome;
+            }
         case "paper":
             if (computerSelection == "rock") {
-                return win(playerSelection, computerSelection);
+                console.log(win(playerSelection, computerSelection));
+                outcome = "win";
+                return outcome;
             }
-            else {return lose(playerSelection, computerSelection);}
+            else {
+                console.log(lose(playerSelection, computerSelection));
+                outcome = "loss";
+                return outcome;
+            }
         case "scissors":
             if (computerSelection == "paper") {
-                return win(playerSelection, computerSelection);
+                console.log(win(playerSelection, computerSelection));
+                outcome = "win";
+                return outcome;
             }
-            else {return lose(playerSelection, computerSelection);}
+            else {
+                console.log(lose(playerSelection, computerSelection));
+                outcome = "loss";
+                return outcome;
+            }
         default:
-            return "You did not enter a valid option."
+            console.log("You did not enter a valid option.");
+            outcome = null;
+            return outcome;
     }
 }
 
@@ -55,7 +79,7 @@ function game () {
     for (let i = 0; i < 5; i++) {
         const playerSelection = getUserChoice();
         const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
+        playRound(playerSelection, computerSelection);
     }
 }
 
