@@ -1,4 +1,5 @@
-//GENERATE a random choice of "rock", "paper", or "scissors" to be used as the computer's play
+//GENERATE a random number from 0-2.
+//ASSIGN the number a value of "rock", "paper", or "scissors" depending on the number
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) {
@@ -12,13 +13,15 @@ function getComputerChoice() {
 }
 
 // PROMPT the user to provide us with their play
+// STORE the input to be used later on
 function getUserChoice() {
     let option = prompt("Rock, paper, scissors?").toLowerCase();
     return option;
 }
 
 // DETERMINE if the outcome of the matchup is won, lost or drawn
-// OUTPUT a message letting the user know the outcome
+// OUTPUT a message letting the user know the outcome of the round
+// ESTABLISH the result of the round
 function playRound(playerSelection, computerSelection) {
     let outcome;
     
@@ -72,8 +75,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-//REPEAT the game 5 times
-//INCREMENT a number depending on the number of wins, loses and draws
+//REPEAT the game to go on for 5 rounds
+//TRACK the number of times won, lost, drawn, and disqualified
 //DETERMINE a winner at the end of the game
 function game () {
     let wins = 0;
@@ -101,8 +104,15 @@ function game () {
             disqualifications++;
         }
     }
-    
+
     console.log(`Wins: ${wins}, Loses: ${loses}, Draws: ${draws}, Disqualifications: ${disqualifications}`)
+
+    if (wins > (loses + disqualifications)) {
+        console.log("You've won the game!")
+    }
+    else {
+        console.log("You've lost the game.")
+    }
 }
 
 game();
