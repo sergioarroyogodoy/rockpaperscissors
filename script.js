@@ -76,11 +76,33 @@ function playRound(playerSelection, computerSelection) {
 //INCREMENT a number depending on the number of wins, loses and draws
 //DETERMINE a winner at the end of the game
 function game () {
+    let wins = 0;
+    let loses = 0;
+    let draws = 0;
+    let disqualifications = 0;
+
     for (let i = 0; i < 5; i++) {
         const playerSelection = getUserChoice();
         const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
+        
+        let outcome = playRound(playerSelection, computerSelection);
+
+
+        if (outcome == "win") {
+            wins++
+        }
+        else if (outcome == "loss") {
+            loses++;
+        }
+        else if (outcome == "draw") {
+            draws++;
+        }
+        else {
+            disqualifications++;
+        }
     }
+    
+    console.log(`Wins: ${wins}, Loses: ${loses}, Draws: ${draws}, Disqualifications: ${disqualifications}`)
 }
 
 game();
