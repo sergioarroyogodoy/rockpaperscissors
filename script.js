@@ -11,4 +11,14 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+function playRound(playerSelection, computerSelection) {    
+    let draw = () => "It's a draw!";
+
+    if (playerSelection == computerSelection) {
+        return draw();
+    }
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, "rock"));
