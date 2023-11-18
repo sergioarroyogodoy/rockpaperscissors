@@ -13,8 +13,8 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {    
     let draw = () => "It's a draw!";
-    let win = (playerSelection, computerSelection) => `You win! ${playerSelection} beats ${computerSelection}.`;
-    let lose = (playerSelection, computerSelection) => `You lose! ${computerSelection} beats ${playerSelection}.`
+    let win = (playerSelection, computerSelection) => `You win, ${playerSelection} beats ${computerSelection}.`;
+    let lose = (playerSelection, computerSelection) => `You lose, ${computerSelection} beats ${playerSelection}.`
 
     if (playerSelection == computerSelection) {
         return draw();
@@ -25,9 +25,19 @@ function playRound(playerSelection, computerSelection) {
                 return win(playerSelection, computerSelection);
             }
             else {return lose(playerSelection, computerSelection);}
+        case "paper":
+            if (computerSelection == "rock") {
+                return win(playerSelection, computerSelection);
+            }
+            else {return lose(playerSelection, computerSelection);}
+        case "scissors":
+            if (computerSelection == "paper") {
+                return win(playerSelection, computerSelection);
+            }
+            else {return lose(playerSelection, computerSelection);}
     }
 }
 
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, "scissors"));
+console.log(playRound(playerSelection, "paper"));
